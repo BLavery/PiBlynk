@@ -1,11 +1,12 @@
 # PiBlynk
-Javascript and Python libraries for using Blynk APP on Raspberry Pi
+Javascript and Python libraries for using Blynk APP on Raspberry Pi.
 Two working libraries designed to easily connect with the Blynk smartphone APP.
 
-The libraries are designed specifically for Raspberry Pi, although the python one should adapt well. The overall design target is for:
-1. stability in connection
+The libraries are designed specifically for Raspberry Pi. The overall design target is for:
+1. stability in connection to server
 1. full suite of interfacing functions
 1. similarity of functions in the two versions, as far as the languages allow 
+1. easy compatability with Raspberry Pi GPIO and PiCamera
 
 Both are forked code, “standing on the shoulders of others.”
 
@@ -27,7 +28,7 @@ Both are forked code, “standing on the shoulders of others.”
 * Compatible also with rpio and pigpio modules as more competent GPIO libraries.
 * Connects to Blynk server in plain TCP or in SSL.
 
-The javascript version requires nodejs greater than either 0.10.x as distributed on Raspbian, or the 0.12.x as found on xxxxxx.  I upgraded my nodejs using the recommended xxxxxxx to 6.x.  Unfortunately I find that all the later versions of nodejs (past 0.12.x) seem to run only on my Raspberry Pi 3 (armv7), but not on my new Pi zero-W (armv6). On the RPi3, the javascript Blynk code works great. The javascript version is inherently single-threaded.
+The javascript version requires nodejs greater than either 0.10.x as distributed on Raspbian, or the 0.12.x as found on https://node-arm.herokuapp.com/.  I upgraded my nodejs using the recommended **update-nodejs-and-nodered** as per https://nodered.org/docs/hardware/raspberrypi to 6.x.  Unfortunately I find that all the later versions of nodejs (past 0.12.x) seem to run only on my Raspberry Pi 3 (armv7), but not on my new Pi zero-W (armv6). On the RPi3, the javascript Blynk code works great. The javascript version is inherently single-threaded.
 
 
 # Specific to python version:
@@ -41,7 +42,7 @@ The javascript version requires nodejs greater than either 0.10.x as distributed
 * Simple “Ticker” periodic function (not threaded)
 * Generic buffering widget for any sensor pushing data from APP (eg lightmeter)
 
-The python version runs fine on any version of RPi. It uses threading for user code.
+The python version runs fine on any version of RPi. It uses threading/timers for user code. It should easily adapt to any linux machine, and probably to a windows python too.
 
 # Attributions:
 
