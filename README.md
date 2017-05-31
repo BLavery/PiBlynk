@@ -16,6 +16,7 @@ Both are forked code, “standing on the shoulders of others.”
 * Widget object for LCD
 * Widget for GPS (with distance and direction), 
 * Widget for accelerometer (with pitch and roll)
+* Generic buffering widget for any sensor pushing data from APP (eg lightmeter)
 * Send email, tweet, smartphone notification.
 * Change phone widget properties (colour, label)
 * Widget for a “bridge”, ie gpio or virtual commands to another hardware device.
@@ -40,7 +41,6 @@ The javascript version requires nodejs greater than either 0.10.x as distributed
 * One-shot Timer functions, threaded/concurrent
 * Reentrancy protection for threaded “write” calls.
 * Simple “Ticker” periodic function (not threaded)
-* Generic buffering widget for any sensor pushing data from APP (eg lightmeter)
 
 The python version runs fine on any version of RPi. It uses threading/timers for user code. It should easily adapt to any linux machine, and probably to a windows python too.
 
@@ -69,4 +69,4 @@ The two TXT files (js and py) list the example files supplied. These were used i
 * GPIO2/GPIO3 I2C with OLED display
 * camera
 
-(The OLED functions use a library separately listed on github.)
+(The OLED functions use libraries separately listed on github.)
