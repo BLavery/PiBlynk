@@ -6,7 +6,7 @@ The libraries are designed specifically for Raspberry Pi. The overall design tar
 1. stability in connection to server
 1. full suite of interfacing functions
 1. similarity of functions in the two versions, as far as the languages allow 
-1. easy compatability with Raspberry Pi GPIO and PiCamera
+1. easy compatibility with Raspberry Pi GPIO and PiCamera
 
 Both are forked code, “standing on the shoulders of others.”
 
