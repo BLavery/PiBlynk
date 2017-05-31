@@ -54,3 +54,18 @@ and thence from
 The piblynk-js library was derived from:
     https://github.com/vshymanskyy/blynk-library-js
     MIT licence
+
+# Re the Example Files
+
+The two TXT files (js and py) list the example files supplied. These were used in a classroom where students had already connected these devices:
+* GPIO21   out to Red Led
+* GPIO20   out Green Led
+* GPIO16   out Blue Led
+* GPIO14   in from PIR sensor
+* GPIO13     Button1/pullup
+* GPIO6     Button2/pullup
+* GPIO26    Button3/pullup
+* GPIO19     Button4/pullup
+* GPIO2/GPIO3 I2C with OLED display
+* camera
+(The OLED functions use a library separately listed on github.)
