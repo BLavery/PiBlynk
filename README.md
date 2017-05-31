@@ -68,4 +68,5 @@ The two TXT files (js and py) list the example files supplied. These were used i
 * GPIO19     Button4/pullup
 * GPIO2/GPIO3 I2C with OLED display
 * camera
+
 (The OLED functions use a library separately listed on github.)
