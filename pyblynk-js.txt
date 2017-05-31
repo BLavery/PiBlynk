@@ -24,8 +24,7 @@ var blink = new Blynk.Blynk(token [,options])
     skip_connect: true         false default
      }
  
-blynk.on(event, func)   event = 'connect', network', 'disconnect'
-           the 'network' event carries "Up" or "Down" status
+blynk.on(event, func)   event = 'connect', 'disconnect'
 blynk.disconnect([reconnect])   reconnect defaults true
 blynk.connect()
 
@@ -81,7 +80,7 @@ var bridge = new blynk.WidgetBridge(my_vpin_number)
     bridge.analogWrite(target_analog_pin, val)
     bridge.virtualWrite(target_virtual_pin, val)
 
-blynk.email([to,] subject, body)    to can default to as set at APP 
+blynk.email([to,] subject, body)    "to" can default to as set at APP 
     INCLUDE WIDGET AT APP
 blynk.notify(message)
     INCLUDE WIDGET AT APP
