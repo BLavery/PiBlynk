@@ -49,7 +49,7 @@ The javascript version requires nodejs greater than either 0.10.x as distributed
 
 The python version runs fine on any version of RPi. It uses threading/timers for user code. It should easily adapt to any linux machine, and probably to a windows python too.
 
-[API? See here](.md)  
+[API? See here](PiBlynk-py.md)  
 
 
 # Installation:
