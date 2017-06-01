@@ -23,7 +23,6 @@ def gpioRead_h(pin, gpioObj):
         return (1 if v else 0)
     else:                      # gpio led pwm
         return v
-    
 
 # set up any buttons (or whatever) and connect to gpioRead_h
 button1 = GPIO.Button(13)    

@@ -1,7 +1,11 @@
-token  = '-=-=-=--=-=-=-='    # RPi proj1 kinkyblynky
-token2 = '--------------------------'   # RPI proj2
-token3 = 'something else'  # arduino proj2
+token  = '-=-=-=--=-=-=-='   
 
+token2 = '--------------------------'  
+token3 = 'something else' 
 
+# Edit your token into here
 # By keeping token here on separate file,
 # we can use same token on many example files.
+# The supplied examples (exc bridge) use just top line:  token
+
+

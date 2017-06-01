@@ -1,12 +1,12 @@
 
 # BL  PiBlynk   V 0.3.5  28/5/17
 
-# Python based Blynk library for Raspberry Pi
+# Python Blynk library for Raspberry Pi
 
 
 
-Creating a blynk object
------------------------
+## Creating a blynk object
+
 
 
 import PiBlynk
@@ -16,8 +16,8 @@ blynk = PiBlynk.Blynk('your AUTH token here')
 At this point an instance is created, but it has **not** tried to connect to the Blynk cloud. 
 That is done with blynk.run(), which needs to be last line of script.
  
-GPIO - zero coding
-------------------
+## GPIO - zero coding
+
 
 blynk.gpio_auto(pull)   
     pull = "up" or "down" or "button" or nothing will set pullup/down resistors (for ALL inputs used)
@@ -28,8 +28,8 @@ Note that in many practical cases this will not be adequate, and custom coding i
 Note also that without this user call, no gpio functions are included in the library.
 
 
-GPIO & Virtual Read & Write Callbacks
--------------------------------------
+## GPIO & Virtual Read & Write Callbacks
+
 
 
 The callbacks are like this, and should be def'd before doing the add_xxx_pin():
@@ -75,8 +75,8 @@ initial_state is an optional payload of one value
 gpio and analog pins are actual GPIO pin numbers (BCM for RPi)
 virtual pins are 0 - 127
 
-User Timers & Tasks:
---------------------
+## User Timers & Tasks:
+
 
 It is also possible to set up timed user tasks.  
 These functions ("callbacks") will be called based on the period or time specified 
@@ -118,8 +118,8 @@ blynk.Ticker(ticker_callback, divider=40, initial_state = None, always=False)
 blynk.Ticker(None) - disables
     
 
-Software widgets at python end:
--------------------------------
+## Software widgets at python end:
+
 
 mylcd = blynk.lcd_widget(vpin_number)
    mylcd.cls()
@@ -167,8 +167,8 @@ blynk.disconnect()
 
 blynk.run()   -  the main non-returning loop of the blynk engine.  Last line of python script.
 
-Example files 
--------------
+## Example files 
+
 01-simplest-gpio.py
 02-custom-gpio.py
 05-rlogger.py

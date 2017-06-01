@@ -11,12 +11,9 @@ def timeNow():
 
 axl = blynk.accel_widget(17)
 
-
 def timer2loop(s):  # 2 sec repeat timer
-
     #print(axl.z, "z")
     print(int(axl.pitch()), int(axl.roll()))
-
 
 blynk.add_Task(2, timer2loop)
 
