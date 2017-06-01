@@ -24,7 +24,7 @@ The two files PiBlynk-py.md and piblynk-js.md list the example files supplied. T
 
 # APP Widgets
 
-If you run the "includes everything" example file (either python or javascript) then here are all the wisgets to set on your smartphone APP. Caution: it will consume over 7000 blynk "energy" credits to do these all together! You get only 2000 for free, and more will cost you money.
+If you run the "includes everything" example file (either python or javascript) then here are all the widgets to set on your smartphone APP. Caution: it will consume over 7000 blynk "energy" credits to do these all together! You get only 2000 for free, and more will cost you money.
 
 
 

@@ -60,15 +60,17 @@ I am suggesting simple manual download as a zip file, and "extract-here". The tw
 In both libraries you will need to edit your blynk AUTH TOKEN for your RPi device into file **mytoken.py** or **mytoken.js**.
 
 ### NodeJS version:
-The folder node_modules/piblynk holds the library code. You will additionally need to use npm to install locally several support modules. Adjust this command to your workspace: 
+The folder node_modules/piblynk holds the library code. You will additionally need to use npm to install locally several support modules. Adjust this command to wherever is your workspace: 
 
-xxx@xxx$ ~/Documents/NodejsScripts/**npm install onoff bindings coffee-script epoll underscore**
+xxx@xxx ~/Documents/NodejsScripts $ **npm install onoff bindings coffee-script epoll underscore**
 
-Load any example file into geany. Click Build/SetBuild Commands and check that the execute command is set to  **nodejs %f**   
+And by all means, it that's in your usual practice, install these modules instead to nodejs' global area.
+
+Load any example file into geany. Click Build/Set Build Commands and check that the execute command is set to  **nodejs %f**   
 
 In geany, clicking the **Run or View Current File** icon should execute it, and connect to the blynk server.
 
-### Python version:###
+### Python version:
 
 The folder PiBlynk holds the library code. You should have (or create) an **images** folder parallel to PiBlynk if you are going to use the camera example.
 
