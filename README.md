@@ -1,9 +1,10 @@
 # PiBlynk
-"BETA" - as at 1 June 2017 - as a public GIT project being ported up from a local class project, these files are still being frequently edited.
-
-![](images/blynk1.jpg)
-Javascript and Python libraries for using Blynk APP on Raspberry Pi.
+**Javascript and Python libraries for using Blynk APP on Raspberry Pi.**  
 Two working libraries designed to easily connect with the Blynk smartphone APP.
+
+![](images/blynk1.jpg)  
+
+*"BETA" - as at 1 June 2017 - as a public GIT project being ported up from a local class project, these files are still being frequently edited. In particular, the oled function is not usable in the javascript version just yet. (examples 06, 08, 09, 12, 99)*
 
 The libraries are designed specifically for Raspberry Pi. The overall design target is for:
 
@@ -39,7 +40,7 @@ The javascript version requires nodejs greater than either 0.10.x as distributed
 
 # Specific to python version:
 * By default, “hardware agnostic”. Operates on any linux, and probably on Windows (unchecked)
-* No default GPIO library. Operates comfortably with gpiozero module.
+* Operates comfortably with gpiozero module, but gpiozero not loaded by default.
 * Python (2) or python 3.
 * TCP connection, but no SSL.
 * User Tasks, ie interval timer, threaded/concurrent
