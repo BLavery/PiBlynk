@@ -63,7 +63,7 @@ In both libraries you will need to edit your blynk AUTH TOKEN for your RPi devic
 ### NodeJS version:
 The folder node_modules/piblynk holds the library code. You will additionally need to use npm to install locally several support modules. Adjust this command to wherever is your workspace: 
 
-xxx@xxx ~/Documents/NodejsScripts $ **npm install onoff bindings coffee-script epoll underscore**
+xxx@xxx ~/Documents/NodejsScripts $ **npm install onoff bindings coffee-script epoll underscore i2c**
 
 And by all means, it that's in your usual practice, install these modules instead to nodejs' global area.
 
@@ -79,7 +79,8 @@ Load any example file into geany. Click Build/Set Build Commands and check that 
 
 Click the **Run or View Current File** icon to execute your example, and to connect to the blynk server.
   
-    
+The python version also includes incidentally a modest library for oled display 128x64 ssd1306. It is not an intrinsic part of the PiBlynk library, but was used just as one item in the hardware suite used for the example files.     
+
 # Examples, and Test Hardware used:
 
 [See separate file](test_hardware.md)
