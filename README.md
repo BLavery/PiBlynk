@@ -74,7 +74,7 @@ In geany, clicking the **Run or View Current File** icon should execute it, and 
 
 The folder PiBlynk holds the library code. You should have (or create) an **images** folder parallel to PiBlynk if you are going to use the camera example.
 
-Load any example file into geany. Click Build/SetBuild Commands and check that the execute command is set to  **python %f** or preferably **python3 %f**   
+Load any example file into geany. Click Build/Set Build Commands and check that the execute command is set to  **python %f** or preferably **python3 %f**   
 
 Click the **Run or View Current File** icon to execute your example, and to connect to the blynk server.
   

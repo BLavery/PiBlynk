@@ -1,4 +1,6 @@
 
+# iPhone blynk may not have GPS widget?
+
 from PiBlynk import Blynk
 from mytoken import *
 blynk = Blynk(token)

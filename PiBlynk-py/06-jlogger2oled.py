@@ -13,7 +13,7 @@ def timeNow():
 #------------------------------------------
 
 # NOTE: this crashes if oled library or oled hardware display not found !!!
-# remove all oled lines if not using oled
+
 from  oled96 import oled 
 oled.yell(" Hello")
 

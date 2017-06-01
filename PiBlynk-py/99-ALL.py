@@ -1,12 +1,14 @@
 
-
+# This file has ALL the examples rolled into one.
 
 import os, socket
 import gpiozero as GPIO
 #  http://gpiozero.readthedocs.io/en/v1.3.1/index.html
 
 #import logging
-#logging.basicConfig(level=logging.CRITICAL)
+#logging.basicConfig(level=logging.WARNING)
+# NOTE: setting logging level here can override the default in PiBlynk library
+# Refer __init__.py in the library
 
 from PiBlynk import Blynk
 from mytoken import *
@@ -17,6 +19,7 @@ blynk = Blynk(token)
 import time
 def timeNow():
     return time.asctime()[11:19]
+# A handy utility used in several places below
 
 #------------------------------------
 
@@ -75,24 +78,21 @@ blynk.add_digital_hw_pin(20, None, gpioOut_h, ledG)
 # PWM
 
 def gpioOutPwm_h(val, pin, gpioObj):  # generic pwm write scaled 0-100 
-    gpioObj.value = int(val[0])/100.0   # gpiozero pwm uses 0.0- 1.0
+    val = int(val[0])
+    if val<0 or val>100:
+        print("Pls set slider scale 0-100")
+    else:
+        gpioObj.value = val/100.0   # gpiozero pwm uses 0.0- 1.0
 
 ledB = GPIO.PWMLED(16)        # blue led  controlled from 0-100 slider at app 
 blynk.add_virtual_pin(8, None, gpioOutPwm_h, ledB)
 
 #---------------------------------
 
-# ... and the blue PWMLED pwm value is read & sent back to gauge on vpin 9 (0.0 -1.0)
+# ... and the blue PWMLED pwm value is read & sent back to gauge 
+#      on vpin 9 (0.0 -1.0)
 blynk.add_virtual_pin(9, gpioRead_h, None, ledB)
 
-#------------------------------
-
-# widgets at app
-
-lcd = blynk.lcd_widget(33)
-axl = blynk.accel_widget(17)
-gps = blynk.gps_widget(11)
-light = blynk.sensor_widget(25)
 
 #-------------------------------
 
@@ -141,12 +141,13 @@ blynk.add_virtual_pin(13, None, osterminal_h)
 # (eg "light" has been done as a sensor_widget)
 
 def virt_generic_h(val, pin, txt):  
-    print(txt, val ,"\x1b[K\x1b[1A")
+    print(txt, val )
 
 blynk.add_virtual_pin(24, None, virt_generic_h, "Prox: ") # text get a ride as "state"
 blynk.add_virtual_pin(20, None, virt_generic_h, "js: ")
 
 #-----------------------------------
+gps = blynk.gps_widget(11)
 
 # write back computed GPS distance when POLLED by app 
 
@@ -157,9 +158,9 @@ def distRead_h(pin, st):
     if gps.timestamp:
         mins = round((time.time() - gps.timestamp)/60)
         mins = "["+str(mins)+" min]" if mins>= 0  else ""
-    #print("GPS ",d, b, mins,"\x1b[K\x1b[1A")
+    #print("GPS ",d, b, mins)
     
-    if d>100:
+    if d > 5000:
         return "GPS " + str(int(d/100)/10) +" km  " + str(int(b)) + " dg  "+mins
     elif d > 40:  # very short dist = likely gps reading errors!
         return "GPS " + str(int(d)) +" m  " + str(int(b)) + " dg  "+mins
@@ -282,8 +283,7 @@ blynk.Timer(3, rlogstart)   # this is a 1-shot, after 3 secs
 
 #------------------------------------------
 
-# NOTE: this crashes if oled library or oled hardware display not found !!!
-# remove all oled lines if not using oled
+
 try:
     from  oled96 import oled 
     oled.yell(" Hello")
@@ -295,17 +295,6 @@ def jlog(val, pin, st):
         oled.jnl(val[0])
     print(val[0])
 blynk.add_virtual_pin(19, write= jlog)
-
-#-------------------------
-
-# a 2 second task loop:
-
-# repeat timer to push some things to app
-# 1. pulsing LED at app ("active" indicator)
-# 2. message to LCD
-
-# and to display some incoming widget data:
-# accelerometer, gps and light sensor
 
 
 #----------------------------------
@@ -351,6 +340,20 @@ if is_rpi3:
 
 #----------------------------------
 
+lcd = blynk.lcd_widget(33)
+axl = blynk.accel_widget(17)
+light = blynk.sensor_widget(25)
+
+#-------------------------
+
+# a 2 second task loop:
+
+# repeat timer to push some things to app
+# 1. pulsing LED at app ("active" indicator)
+# 2. message to LCD
+# 3. display some incoming widget data:
+#          eg accelerometer, gps and light sensor
+
 
 def timer2loop(state):  # 2 sec repeat timer ("bright" is the initial-state/new-state payload)
     # job1: wink led widget at APP on V15
@@ -370,11 +373,11 @@ def timer2loop(state):  # 2 sec repeat timer ("bright" is the initial-state/new-
     lcd.Print(0,1,"RPi: "+socket.gethostname())
 
     # job3 show some stuff
-    #print(axl.z, "z\x1b[K\x1b[1A")
-    #print("pitch/roll: ",int(axl.pitch()), int(axl.roll()))
+    #print(axl.z, "z")
+    print("pitch/roll: ",int(axl.pitch()), int(axl.roll()))
     #print(gps.lat, gps.lon)
-    #print(round(gps.distance()), "m ")
-    #print(light.value, "lx")
+    print(round(gps.distance()), "m ")
+    print(light.value, "lx")
 
     return [bright, colr]  # we return amended "state"
     
@@ -391,11 +394,6 @@ def discon_cb():
     print ("Disconnected: "+ timeNow())
 
 blynk.on_disconnect(discon_cb)
-
-
-
-
-
 
 ######################################################################################
 
