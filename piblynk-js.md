@@ -12,7 +12,9 @@ Stripped of all non-RPi sections (eg espruino, browser)
 Several changes to improve connection stability.
 Added widgets at RPi end.
 
-Dependencies: modules OnOff, bindings, coffee-script, epoll, underscore
+Dependencies:  
+* the library itself: onoff  
+* the example files: rpio, my-local-ip, campi, oled-js-pi
 
 ## USAGE:
 

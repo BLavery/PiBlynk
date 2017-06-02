@@ -34,7 +34,7 @@ Both are forked code, “standing on the shoulders of others.”
 * Compatible also with rpio and pigpio modules as more competent GPIO libraries.
 * Connects to Blynk server in plain TCP or in SSL.
 
-The javascript version requires nodejs greater than either 0.10.x as distributed on Raspbian, or the 0.12.x as found on https://node-arm.herokuapp.com/.  I upgraded my nodejs using the recommended **update-nodejs-and-nodered** as per https://nodered.org/docs/hardware/raspberrypi to 6.x.  Unfortunately I find that all the later versions of nodejs (past 0.12.x) seem to run only on my Raspberry Pi 3 (armv7), but not on my new Pi zero-W (armv6). On the RPi3, the javascript Blynk code works great. The javascript version is inherently single-threaded.
+The javascript version requires nodejs greater than either 0.10.x as distributed on Raspbian, nor the 0.12.x as found on https://node-arm.herokuapp.com/.  I upgraded my nodejs using the recommended **update-nodejs-and-nodered** as per https://nodered.org/docs/hardware/raspberrypi to 6.x.  Unfortunately I find that all the later versions of nodejs (past 0.12.x) seem to run only on my Raspberry Pi 3 (armv7), but not on my new Pi zero-W (armv6). On the RPi3, the javascript Blynk code works great. The javascript version is inherently single-threaded.
 
 [API? See here](piblynk-js.md)  
 
@@ -63,7 +63,9 @@ In both libraries you will need to edit your blynk AUTH TOKEN for your RPi devic
 ### NodeJS version:
 The folder node_modules/piblynk holds the library code. You will additionally need to use npm to install locally several support modules. Adjust this command to wherever is your workspace: 
 
-xxx@xxx ~/Documents/NodejsScripts $ **npm install onoff bindings coffee-script epoll underscore i2c**
+xxx@xxx ~/Documents/NodejsScripts $ **npm install onoff**  
+And note the example files will also need:  
+**npm install rpio my-local-ip campi oled-js-pi**
 
 And by all means, it that's in your usual practice, install these modules instead to nodejs' global area.
 
