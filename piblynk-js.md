@@ -1,20 +1,21 @@
-# piblynk  javascript library for Raspberry Pi 3
+# piblynk  
+# javascript library for Blynk on Raspberry Pi 3
 
-Will not run on V0.xx (0.10, 0,12) versions of nodejs, as on RPi raspbian 
-Nodejs later versions for ARM (as at May 2017) do not execute on old CPU versions of RPi.
+Will not run on V0.xx (0.10, 0,12) versions of nodejs, as on RPi raspbian.   
+And I find that nodejs later versions (as at May 2017) do not execute on old CPU versions of RPi (armV6).
 
 Therefore this library runs only on RPI3 (ie ARMv7), with upgraded nodejs (eg V6.x)
 
 Derived from:  https://github.com/vshymanskyy/blynk-library-js
    MIT licence
 
-Stripped of all non-RPi sections (eg espruino, browser)
-Several changes to improve connection stability.
+Stripped of all non-RPi sections (eg espruino, browser)  
+Several changes to improve connection stability.  
 Added widgets at RPi end.
 
 Dependencies:  
-* the library itself: onoff  
-* the example files: rpio, my-local-ip, campi, oled-js-pi
+* the library itself needs: onoff  
+* the example files use: rpio, my-local-ip, campi, oled-js-pi
 
 ## USAGE:
 

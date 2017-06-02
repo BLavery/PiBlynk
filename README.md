@@ -4,7 +4,6 @@ Two working libraries designed to easily connect with the Blynk smartphone APP.
 
 ![](images/blynk1.jpg)  
 
-*"BETA" - as at 1 June 2017 - as a public GIT project being ported up from a local class project, these files are still being frequently edited. In particular, the oled function is not usable in the javascript version just yet. (examples 06, 08, 09, 12, 99)*
 
 The libraries are designed specifically for Raspberry Pi. The overall design target is for:
 
@@ -29,7 +28,7 @@ Both are forked code, “standing on the shoulders of others.”
 * Extensive example files.
 
 
-# Specific to javascript version:
+# Features specific to javascript version:
 * Uses OnOff gpio module to allow simplistic GPIO in and out without specific coding.
 * Compatible also with rpio and pigpio modules as more competent GPIO libraries.
 * Connects to Blynk server in plain TCP or in SSL.
@@ -38,7 +37,7 @@ The javascript version requires nodejs greater than either 0.10.x as distributed
 
 [API? See here](piblynk-js.md)  
 
-# Specific to python version:
+# Features specific to python version:
 * By default, “hardware agnostic”. Operates on any linux, and probably on Windows (unchecked)
 * Operates comfortably with gpiozero module, but gpiozero not loaded by default.
 * Python (2) or python 3.
@@ -60,12 +59,12 @@ I am suggesting simple manual download as a zip file, and "extract-here". The tw
 
 In both libraries you will need to edit your blynk AUTH TOKEN for your RPi device into file **mytoken.py** or **mytoken.js**.
 
-### NodeJS version:
+### Installing NodeJS version:
 The folder node_modules/piblynk holds the library code. You will additionally need to use npm to install locally several support modules. Adjust this command to wherever is your workspace: 
 
 xxx@xxx ~/Documents/NodejsScripts $ **npm install onoff**  
 And note the example files will also need:  
-**npm install rpio my-local-ip campi oled-js-pi**
+**npm install rpio my-local-ip campi oled-font-5x7 pigpio**
 
 And by all means, it that's in your usual practice, install these modules instead to nodejs' global area.
 
@@ -73,7 +72,7 @@ Load any example file into geany. Click Build/Set Build Commands and check that 
 
 In geany, clicking the **Run or View Current File** icon should execute it, and connect to the blynk server.
 
-### Python version:
+### Installing Python version:
 
 The folder PiBlynk holds the library code. You should have (or create) an **images** folder parallel to PiBlynk if you are going to use the camera example.
 
@@ -81,7 +80,7 @@ Load any example file into geany. Click Build/Set Build Commands and check that 
 
 Click the **Run or View Current File** icon to execute your example, and to connect to the blynk server.
   
-The python version also includes incidentally a modest library for oled display 128x64 ssd1306. It is not an intrinsic part of the PiBlynk library, but was used just as one item in the hardware suite used for the example files.     
+Both versions also include incidentally a library for oled display 128x64 ssd1306. These are not an intrinsic part of the PiBlynk libraries, but they were used just to add the oled item in the hardware suite used for the example files.     
 
 # Examples, and Test Hardware used:
 
