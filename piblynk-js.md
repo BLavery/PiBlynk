@@ -19,7 +19,7 @@ Dependencies:
 
 ## USAGE:
 
-var Blynk = require("piblynk")          < corrected 3 Jun 17
+var Blynk = require("piblynk")      
 var blink = new Blynk.Blynk(token [,options])  
     where options = {  
     heartbeat: 10000            10000msec default  
