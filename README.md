@@ -4,6 +4,8 @@ Two working libraries designed to easily connect with the Blynk smartphone APP.
 
 ![](images/blynk1.jpg)  
 
+## May 2018 - This is no longer being maintained by the original author.
+## Please feel free to fork, copy, adapt if you find it useable
 
 The libraries are designed specifically for Raspberry Pi. The overall design target is for:
 
